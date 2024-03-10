@@ -1,0 +1,13 @@
+.logo {
+  color: var(--clr-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.logo svg {
+  font-size: 4rem;
+}

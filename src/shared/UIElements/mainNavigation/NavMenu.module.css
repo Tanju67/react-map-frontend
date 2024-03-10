@@ -1,0 +1,11 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem;
+}
+
+.menu a {
+  color: var(--clr-primary);
+}
