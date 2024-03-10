@@ -1,0 +1,23 @@
+.btn {
+  border: none;
+  background-color: var(--clr-primary);
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.btn.sm {
+  padding: 0.5rem 1rem;
+}
+
+.btn.normal {
+  padding: 0.8rem 5rem;
+}
+
+.btn.big {
+  padding: 1.2rem 6rem;
+}
+
+.btn:hover {
+  background-color: var(--clr-primary-shade);
+}
