@@ -1,0 +1,32 @@
+.section {
+  padding: 5rem 8rem;
+  color: var(--clr-text-light);
+}
+
+.section h2 {
+  margin-bottom: 5rem;
+  text-align: center;
+  color: var(--clr-primary);
+  display: flex;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  gap: 2rem;
+}
+.imgBox {
+  flex: 1;
+}
+
+.imgBox img {
+  width: 100%;
+}
+
+.textBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
