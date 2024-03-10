@@ -13,7 +13,9 @@ function HeaderSection() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
           minima?
         </p>
-        <Button size="normal">Discover</Button>
+        <Button className={styles.button} size="normal">
+          Discover
+        </Button>
       </div>
     </header>
   );

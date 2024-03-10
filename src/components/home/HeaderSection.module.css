@@ -10,3 +10,54 @@
     url("../../assets/pexels-nastyasensei-335393.jpg") center/cover no-repeat
       fixed;
 }
+
+.content {
+  height: 70vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content h1 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+  position: relative;
+  animation-name: animateRight;
+  animation-duration: 1s;
+}
+
+.content p {
+  position: relative;
+  margin-bottom: 2rem;
+  letter-spacing: 1.2px;
+  animation-name: animateLeft;
+  animation-duration: 1s;
+}
+.content .button {
+  position: relative;
+  animation-name: animateRight;
+  animation-duration: 1s;
+}
+
+@keyframes animateRight {
+  from {
+    right: -30rem;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animateLeft {
+  from {
+    left: -30rem;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
