@@ -40,7 +40,7 @@
   animation-duration: 1s;
 }
 
-@keyframes animateRight {
+/* @keyframes animateRight {
   from {
     right: -30rem;
     opacity: 0;
@@ -60,4 +60,4 @@
     left: 0;
     opacity: 1;
   }
-}
+} */

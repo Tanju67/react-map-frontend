@@ -1,0 +1,39 @@
+.footer {
+  display: flex;
+  background-color: var(--clr-secondary);
+  justify-content: space-between;
+  padding: 5rem 8rem;
+  align-items: flex-start;
+}
+.footerNav {
+  display: flex;
+  gap: 1rem;
+}
+
+.footerNav a {
+  color: var(--clr-primary);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.footerNav li {
+  line-height: 1.2;
+}
+
+.footerNav a:hover {
+  color: #fff;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 2rem;
+  font-size: 3rem;
+  color: var(--clr-primary);
+}
+.socialMedia svg {
+  transition: all 0.3s;
+}
+
+.socialMedia svg:hover {
+  color: #fff;
+}

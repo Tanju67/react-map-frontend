@@ -3,6 +3,8 @@ import styles from "./Home.module.css";
 import HeaderSection from "./HeaderSection";
 import DiscoverSection from "./DiscoverSection";
 import PricingSection from "./PricingSection";
+import ReviewSection from "./ReviewSection";
+import FooterSection from "./FooterSection";
 
 function Home() {
   return (
@@ -10,6 +12,8 @@ function Home() {
       <HeaderSection />
       <DiscoverSection />
       <PricingSection />
+      <ReviewSection />
+      <FooterSection />
     </div>
   );
 }

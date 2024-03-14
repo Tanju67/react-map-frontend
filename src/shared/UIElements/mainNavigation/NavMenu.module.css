@@ -3,9 +3,27 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 .menu a {
   color: var(--clr-primary);
+  transition: all 0.3s;
+}
+.menu a:hover {
+  color: #fff;
+}
+
+.menu li:last-child {
+  background-color: var(--clr-primary);
+  padding: 0.5rem 2rem;
+  transition: all 0.3s;
+}
+
+.menu li:last-child a {
+  color: #fff;
+}
+
+.menu li:last-child:hover {
+  background-color: var(--clr-primary-shade);
 }

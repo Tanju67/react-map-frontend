@@ -1,3 +1,7 @@
+/* Taken from getting started guide at: https://leafletjs.com/examples/quick-start/ */
+@import "https://unpkg.com/leaflet@1.9.3/dist/leaflet.css";
+@import "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap";
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
@@ -25,7 +29,6 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -54,6 +57,10 @@ a {
   margin: 0 auto;
   width: 50rem;
   text-align: center;
+}
+
+.active {
+  background-color: var(--clr-secondary-tint);
 }
 
 @media only screen and (max-width: 850px) {

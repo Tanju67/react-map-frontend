@@ -1,0 +1,13 @@
+.sideBar {
+  flex: 1;
+  background-color: var(--clr-secondary);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.logoBox {
+  margin: 3rem 0;
+  flex: 1;
+}

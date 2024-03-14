@@ -1,0 +1,28 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  flex: 1;
+}
+
+.imgBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+.imgBox img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
