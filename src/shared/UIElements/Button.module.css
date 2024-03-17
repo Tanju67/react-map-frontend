@@ -16,3 +16,12 @@
 .btn.big {
   padding: 1.2rem 6rem;
 }
+
+.btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background-color: #666;
+}

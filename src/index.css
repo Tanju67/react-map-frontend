@@ -59,9 +59,9 @@ a {
   text-align: center;
 }
 
-.active {
+/* .active {
   background-color: var(--clr-secondary-tint);
-}
+} */
 
 @media only screen and (max-width: 850px) {
   html {

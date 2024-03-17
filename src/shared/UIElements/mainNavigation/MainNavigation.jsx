@@ -6,7 +6,7 @@ import NavMenu from "./NavMenu";
 function MainNavigation() {
   return (
     <nav className={styles.nav}>
-      <Logo withText={true} />
+      <Logo link={"/"} withText={true} />
       <NavMenu />
     </nav>
   );

@@ -15,10 +15,10 @@ function NavMenu() {
         <a href="/#review">Review</a>
       </li>
       <li>
-        <NavLink>App</NavLink>
+        <NavLink to={"app/search"}>App</NavLink>
       </li>
       <li>
-        <NavLink>Login</NavLink>
+        <NavLink to={"login"}>Login</NavLink>
       </li>
     </ul>
   );

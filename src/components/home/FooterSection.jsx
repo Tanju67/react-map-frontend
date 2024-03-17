@@ -27,11 +27,11 @@ function FooterSection() {
           </li>
           <li>|</li>
           <li>
-            <NavLink>App</NavLink>
+            <NavLink to={"app/search"}>App</NavLink>
           </li>
           <li>|</li>
           <li>
-            <NavLink>Login</NavLink>
+            <NavLink to={"login"}>Login</NavLink>
           </li>
         </ul>
         <div className={styles.socialMedia}>

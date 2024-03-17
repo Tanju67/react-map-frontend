@@ -1,0 +1,31 @@
+.formControl {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  height: 7rem;
+}
+
+.formControl input {
+  border: none;
+  padding: 1rem;
+  background-color: #e2e2e2;
+  outline: none;
+}
+
+.invalid input {
+  background-color: salmon;
+}
+
+.invalid input::placeholder {
+  color: #fff;
+}
+
+.invalid label {
+  color: red;
+}
+
+.invalid .error {
+  color: red;
+  font-size: 1rem;
+}

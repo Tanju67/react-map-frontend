@@ -1,0 +1,29 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  z-index: 10000;
+  align-items: center;
+}
+
+.modal {
+  background-color: var(--clr-secondary);
+  width: 50%;
+  text-align: center;
+  color: #fff;
+  padding: 4rem;
+}
+
+.modal h2 {
+  margin-bottom: 2rem;
+}
+
+.modal p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}

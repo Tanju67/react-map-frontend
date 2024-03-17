@@ -17,5 +17,5 @@
 }
 
 .active {
-  background-color: #fff;
+  background-color: var(--clr-secondary-tint);
 }

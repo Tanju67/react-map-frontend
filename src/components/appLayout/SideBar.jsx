@@ -8,7 +8,7 @@ function SideBar() {
   return (
     <div className={styles.sideBar}>
       <div className={styles.logoBox}>
-        <Logo withText={true} />
+        <Logo link={"/"} withText={true} />
       </div>
       <SideBarTab />
       <TabContent />

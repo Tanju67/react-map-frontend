@@ -1,0 +1,45 @@
+.formCard {
+  padding: 3rem 5rem;
+  background-color: var(--clr-secondary);
+  color: #fff;
+  height: 60vh;
+}
+
+.formCard h4 {
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.formControl {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.formControl input {
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+}
+
+.formAction {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.dateErr {
+  font-size: 1.2rem;
+  color: salmon;
+}
+
+.stepTwo {
+  font-size: 1.2rem;
+}
