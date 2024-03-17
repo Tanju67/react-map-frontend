@@ -1,0 +1,53 @@
+.smallScreen {
+  display: none;
+}
+
+.smallScreen svg {
+  color: var(--clr-primary);
+  font-size: 3rem;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right bottom,
+    rgba(85, 15, 18, 0.8),
+    var(--clr-secondary)
+  );
+  width: 0;
+  height: 100vh;
+}
+.menu li {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.menu a {
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.menu a:hover {
+  color: chartreuse;
+}
+
+.menu span {
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  top: 3rem;
+  right: 5rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .smallScreen {
+    display: flex;
+    z-index: 100;
+  }
+}

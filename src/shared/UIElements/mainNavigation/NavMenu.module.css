@@ -27,3 +27,9 @@
 .menu li:last-child:hover {
   background-color: var(--clr-primary-shade);
 }
+
+@media only screen and (max-width: 750px) {
+  .menu {
+    display: none;
+  }
+}
