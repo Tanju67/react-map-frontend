@@ -3,26 +3,27 @@
   background: linear-gradient(to right bottom, #222, #333);
 }
 
-.loginCard {
+.registerCard {
   background-color: var(--clr-secondary);
   width: 40%;
   margin: 2rem auto;
   padding: 6rem;
   color: #fff;
+  position: relative;
 }
 
-.loginCard form {
+.registerCard form {
   display: flex;
   flex-direction: column;
 }
 
-.loginCard h3 {
+.registerCard h3 {
   margin-bottom: 1rem;
   text-align: center;
   font-size: 2.5rem;
 }
 
-.loginBtn {
+.registerBtn {
   padding: 0.8rem;
   background-color: var(--clr-primary);
   border: none;
@@ -31,23 +32,30 @@
   transition: all 0.3s;
 }
 
-.loginBtn:hover {
+.registerBtn:hover {
   background-color: var(--clr-primary-shade);
 }
 
-.loginBtn:disabled {
+.registerBtn:disabled {
   background-color: #666;
   color: #fff;
   cursor: not-allowed;
 }
 
-.loginCard p {
+.registerCard p {
   font-size: 1rem;
   margin-top: 0.5rem;
 }
 
-.loginCard p a {
+.registerCard p a {
   color: salmon;
   margin-left: 0.5rem;
   text-decoration: underline;
+}
+
+.loader {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
 }

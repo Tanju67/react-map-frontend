@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Register.module.css";
 import MainNavigation from "../../shared/UIElements/mainNavigation/MainNavigation";
 import Card from "../../shared/UIElements/Card";
@@ -9,7 +9,10 @@ import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../shared/utils/validators";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../shared/context/auth-contxt";
+import { BeatLoader } from "react-spinners";
+import Modal from "../../shared/UIElements/Modal";
 
 function Register() {
   const [inputHandler, formState] = useForm({
@@ -18,11 +21,35 @@ function Register() {
     password: { value: "", isValid: false },
     isValid: false,
   });
+
+  const { sendAuthRequest, error, isLoading, setError } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    sendAuthRequest(
+      "auth/register",
+      {
+        name: formState.name.value,
+        email: formState.email.value,
+        password: formState.password.value,
+      },
+      { "Content-Type": "application/json" },
+      () => {
+        navigate("/login");
+      }
+    );
+  };
   return (
     <div className={styles.page}>
       <MainNavigation />
-      <Card className={styles.loginCard}>
-        <form>
+      {error && !isLoading && (
+        <Modal errorMsg={error} handleError={() => setError(null)} />
+      )}
+      <Card className={styles.registerCard}>
+        {isLoading && <BeatLoader className={styles.loader} color="#36d7b7" />}
+        <form onSubmit={submitHandler}>
           <h3>Register</h3>
           <Input
             id="name"
@@ -55,7 +82,7 @@ function Register() {
             validators={[VALIDATOR_MINLENGTH(6)]}
           />
           <button
-            className={styles.loginBtn}
+            className={styles.registerBtn}
             disabled={!formState.isValid}
             type="submit"
           >

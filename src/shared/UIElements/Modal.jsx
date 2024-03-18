@@ -4,7 +4,7 @@ import Card from "./Card";
 import Button from "./Button";
 import { motion } from "framer-motion";
 
-function Modal({ errorMsg, setMapError }) {
+function Modal({ errorMsg, handleError }) {
   return (
     <motion.div
       variants={{
@@ -19,7 +19,7 @@ function Modal({ errorMsg, setMapError }) {
       <Card className={styles.modal}>
         <h2>Error!</h2>
         <p>{errorMsg}</p>
-        <Button onClick={() => setMapError(null)} size={"sm"}>
+        <Button onClick={() => handleError(null)} size={"sm"}>
           Ok
         </Button>
       </Card>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Login.module.css";
 import MainNavigation from "../../shared/UIElements/mainNavigation/MainNavigation";
 import Card from "../../shared/UIElements/Card";
@@ -9,7 +9,10 @@ import {
 } from "../../shared/utils/validators";
 import { useForm } from "../../shared/hooks/useForm";
 import Button from "../../shared/UIElements/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../shared/context/auth-contxt";
+import Modal from "../../shared/UIElements/Modal";
+import { BeatLoader } from "react-spinners";
 
 function Login() {
   const [inputHandler, formState] = useForm({
@@ -17,11 +20,36 @@ function Login() {
     password: { value: "", isValid: false },
     isValid: false,
   });
+
+  const navigate = useNavigate();
+  const { sendAuthRequest, onLogin, error, isLoading, setError } =
+    useContext(AuthContext);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    sendAuthRequest(
+      "auth/login",
+      {
+        email: formState.email.value,
+        password: formState.password.value,
+      },
+      { "Content-Type": "application/json" },
+      (data) => {
+        console.log(data);
+        onLogin(data.user.token, { name: data.user.name, id: data.user.id });
+        navigate("/");
+      }
+    );
+  };
   return (
     <div className={styles.page}>
       <MainNavigation />
+      {error && !isLoading && (
+        <Modal errorMsg={error} handleError={() => setError(null)} />
+      )}
       <Card className={styles.loginCard}>
-        <form>
+        {isLoading && <BeatLoader className={styles.loader} color="#36d7b7" />}
+        <form onSubmit={submitHandler}>
           <h3>Login</h3>
           <Input
             id="email"

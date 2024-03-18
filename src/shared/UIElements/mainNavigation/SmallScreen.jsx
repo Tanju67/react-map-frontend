@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./SmallScreen.module.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { AuthContext } from "../../context/auth-contxt";
 
 function SmallScreen() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const showmenu = () => {
     setIsMenuVisible(true);
   };
+  const { isLoggedIn, onLogout } = useContext(AuthContext);
   return (
     <div className={styles.smallScreen}>
       <GiHamburgerMenu onClick={showmenu} />
@@ -42,10 +44,15 @@ function SmallScreen() {
               <a href="/#review">Review</a>
             </li>
             <li onClick={() => setIsMenuVisible(false)}>
-              <NavLink to={"app/search"}>App</NavLink>
+              <NavLink to={isLoggedIn ? "app/search" : "/login"}>App</NavLink>
             </li>
             <li onClick={() => setIsMenuVisible(false)}>
-              <NavLink to={"login"}>Login</NavLink>
+              <NavLink
+                onClick={isLoggedIn ? onLogout : null}
+                to={isLoggedIn ? "/" : "/login"}
+              >
+                {isLoggedIn ? "Logout" : "Login"}
+              </NavLink>
             </li>
           </motion.ul>
         )}

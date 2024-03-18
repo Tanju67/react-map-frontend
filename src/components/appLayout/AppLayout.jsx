@@ -13,7 +13,7 @@ function AppLayout() {
       <SideBar />
       <Map />
       <AnimatePresence>
-        {mapError && <Modal errorMsg={mapError} setMapError={setMapError} />}
+        {mapError && <Modal errorMsg={mapError} handleError={setMapError} />}
       </AnimatePresence>
     </div>
   );

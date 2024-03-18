@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./HeaderSection.module.css";
 import MainNavigation from "../../shared/UIElements/mainNavigation/MainNavigation";
 import Button from "../../shared/UIElements/Button";
 import { motion } from "framer-motion";
+import { AuthContext } from "../../shared/context/auth-contxt";
+import { useNavigate } from "react-router-dom";
 
 function HeaderSection() {
+  const { isLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
   return (
     <header className={styles.header}>
       <MainNavigation />
@@ -29,8 +33,14 @@ function HeaderSection() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <Button className={styles.button} size="normal">
-            Discover
+          <Button
+            onClick={() =>
+              isLoggedIn ? navigate("app/search") : navigate("/login")
+            }
+            className={styles.button}
+            size="normal"
+          >
+            Discover App
           </Button>
         </motion.div>
       </div>
