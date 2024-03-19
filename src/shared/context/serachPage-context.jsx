@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CountryDataContext } from "./countryData-context";
 
 const SearchPageContetx = createContext({
   query: "",
@@ -46,7 +47,10 @@ const SearchProvider = ({ children }) => {
   const [countryGeolocation, setCountryGeolocation] = useState([]);
   const [dateValidationError, setDateValidationError] = useState(null);
   const [mapError, setMapError] = useState(null);
+  const [flag, setFlag] = useState("");
   const navigate = useNavigate();
+
+  const { sendRequest: sendCountryRequest } = useContext(CountryDataContext);
 
   const sendRequest = async (e) => {
     try {
@@ -89,15 +93,15 @@ const SearchProvider = ({ children }) => {
         { address: data.features[0].properties.formatted },
       ]);
       fn();
-      console.log(data);
     } catch (error) {
       setError(error.message);
     }
   };
 
-  const showFormHandler = (name) => {
+  const showFormHandler = (name, image) => {
     setShowForm(true);
     setCountryName(name);
+    setFlag(image);
     setFormIndex(1);
     setFirstDay("");
     setLastDay("");
@@ -140,15 +144,26 @@ const SearchProvider = ({ children }) => {
     }
 
     if (formIndex === 2) {
-      const obj = {
-        firstDay,
-        lastDay,
-        countryName,
-        destinationAddress,
-        destinationPoints,
-        countryGeolocation,
-      };
-      console.log(obj);
+      const token = localStorage.getItem("token");
+      sendCountryRequest(
+        "",
+        {
+          name: countryName,
+          geoLocation: countryGeolocation,
+          image: flag,
+          destinationPoints,
+          destinationAddress,
+          firstDay,
+          lastDay,
+        },
+        {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        (data) => {
+          navigate("/app/countries");
+        }
+      );
     }
   };
   return (

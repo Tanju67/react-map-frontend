@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import styles from "./AppLayout.module.css";
 import SideBar from "./SideBar";
 import Map from "./Map";
-import { SearchPageContetx } from "../../shared/context/serachPage-context";
 import Modal from "../../shared/UIElements/Modal";
 import { AnimatePresence } from "framer-motion";
+import { SearchFormRequestContetx } from "../../shared/context/searchFormRequest-context";
 
 function AppLayout() {
-  const { mapError, setMapError } = useContext(SearchPageContetx);
+  const { mapError, setMapError } = useContext(SearchFormRequestContetx);
   return (
     <div className={styles.layout}>
       <SideBar />

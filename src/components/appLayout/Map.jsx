@@ -11,15 +11,15 @@ import {
 import styles from "./Map.module.css";
 import { useGeolocation } from "../../shared/hooks/useGeolocation";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { SearchPageContetx } from "../../shared/context/serachPage-context";
+import { SearchFormContext } from "../../shared/context/searchForm-context";
+import { SearchFormRequestContetx } from "../../shared/context/searchFormRequest-context";
 
 function Map() {
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const [searchParams] = useSearchParams();
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
-  const { formIndex } = useContext(SearchPageContetx);
-  const { destinationPoints } = useContext(SearchPageContetx);
+  const { searchFormState } = useContext(SearchFormContext);
 
   const {
     isLoading: isLoadingPosition,
@@ -56,7 +56,7 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
-        {destinationPoints.map((item, i) => (
+        {searchFormState.selectedCountry.destinationPoints.map((item, i) => (
           <Marker key={i} position={[item.lat, item.lng]}>
             <Popup>
               A pretty CSS3 popup. <br /> Easily customizable.
@@ -65,7 +65,7 @@ function Map() {
         ))}
 
         <ChangeCenter position={mapPosition} />
-        {formIndex === 2 && <DetectClick />}
+        {searchFormState.formIndex === 2 && <DetectClick />}
       </MapContainer>
     </div>
   );
@@ -79,26 +79,19 @@ function ChangeCenter({ position }) {
 
 function DetectClick() {
   const navigate = useNavigate();
-  const {
-    setDestinationPoints,
-    reverseGeolocation,
-    isMatchCountry,
-    isRightSelectedPoint,
-  } = useContext(SearchPageContetx);
-  const [searchParams] = useSearchParams();
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
-  console.log(mapLat, mapLng);
+
+  const { dispatch } = useContext(SearchFormContext);
+  const { reverseGeolocation } = useContext(SearchFormRequestContetx);
 
   useMapEvents({
     click: (e) => {
       navigate(`search/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
 
       reverseGeolocation([e.latlng.lat, e.latlng.lng], () => {
-        setDestinationPoints((prev) => [
-          ...prev,
-          { lat: e.latlng.lat, lng: e.latlng.lng },
-        ]);
+        dispatch({
+          type: "UPDATE_DESTINATION_POINTS",
+          payload: { lat: e.latlng.lat, lng: e.latlng.lng },
+        });
       });
     },
   });

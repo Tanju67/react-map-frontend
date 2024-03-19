@@ -1,19 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styles from "./SideBarTab.module.css";
 import { NavLink } from "react-router-dom";
-import { SearchPageContetx } from "../../shared/context/serachPage-context";
+import { SearchFormContext } from "../../shared/context/searchForm-context";
 
 function SideBarTab() {
-  const [tabIndex, setTabIndex] = useState(1);
-  const { setShowForm } = useContext(SearchPageContetx);
+  const { dispatch, searchFormState } = useContext(SearchFormContext);
   return (
     <div className={styles.tabs}>
       <NavLink
         onClick={() => {
-          setTabIndex(1);
-          setShowForm(false);
+          dispatch({ type: "RESET_FORM" });
+          dispatch({ type: "SET_TAB_INDEX", payload: 1 });
         }}
-        className={`${styles.tab} ${tabIndex === 1 ? styles.active : ""}`}
+        className={`${styles.tab} ${
+          +searchFormState.tabIndex === 1 ? styles.active : ""
+        }`}
         to={"search"}
       >
         Search
@@ -21,10 +22,12 @@ function SideBarTab() {
 
       <NavLink
         onClick={() => {
-          setTabIndex(2);
-          setShowForm(false);
+          dispatch({ type: "RESET_FORM" });
+          dispatch({ type: "SET_TAB_INDEX", payload: 2 });
         }}
-        className={`${styles.tab} ${tabIndex === 2 ? styles.active : ""}`}
+        className={`${styles.tab} ${
+          +searchFormState.tabIndex === 2 ? styles.active : ""
+        }`}
         activeclassname="active"
         to={"countries"}
       >
@@ -33,10 +36,12 @@ function SideBarTab() {
 
       <NavLink
         onClick={() => {
-          setTabIndex(3);
-          setShowForm(false);
+          dispatch({ type: "RESET_FORM" });
+          dispatch({ type: "SET_TAB_INDEX", payload: 3 });
         }}
-        className={`${styles.tab} ${tabIndex === 3 ? styles.active : ""}`}
+        className={`${styles.tab} ${
+          +searchFormState.tabIndex === 3 ? styles.active : ""
+        }`}
         activeclassname="active"
         to={"detail"}
       >

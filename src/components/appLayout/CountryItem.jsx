@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./CountryItem.module.css";
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { SearchPageContetx } from "../../shared/context/serachPage-context";
 
 function CountryItem({ image, name, region, coord, onClick }) {
-  const { setCountryGeolocation } = useContext(SearchPageContetx);
   return (
     <Link to={`form?lat=${coord[0]}&lng=${coord[1]}`}>
       <motion.li
@@ -14,8 +12,7 @@ function CountryItem({ image, name, region, coord, onClick }) {
           visible: { opacity: 1, scale: 1 },
         }}
         onClick={() => {
-          onClick(name);
-          setCountryGeolocation(coord);
+          onClick(name, image, coord);
         }}
         initial="hidden"
         animate="visible"

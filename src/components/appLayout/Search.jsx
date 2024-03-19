@@ -2,24 +2,29 @@ import React, { useContext } from "react";
 import styles from "./Search.module.css";
 import CountryItem from "./CountryItem";
 import { Outlet } from "react-router-dom";
-import { SearchPageContetx } from "../../shared/context/serachPage-context";
+import { SearchFormContext } from "../../shared/context/searchForm-context";
+import { SearchFormRequestContetx } from "../../shared/context/searchFormRequest-context";
 
 function Search() {
-  const { showForm, setQuery, query, countries, showFormHandler, sendRequest } =
-    useContext(SearchPageContetx);
+  const { dispatch, showFormHandler, searchFormState } =
+    useContext(SearchFormContext);
+  const { getCountryDataFromApi } = useContext(SearchFormRequestContetx);
   const submitHandler = async (e) => {
     e.preventDefault();
-    sendRequest();
+    getCountryDataFromApi();
+    dispatch({ type: "RESET_QUERY" });
   };
 
   return (
     <div className={styles.search}>
-      {!showForm && (
+      {!searchFormState.formIsVisible && (
         <>
           <form onSubmit={submitHandler} className={styles.formControl}>
             <input
-              onChange={(e) => setQuery(e.target.value)}
-              value={query}
+              onChange={(e) =>
+                dispatch({ type: "SET_QUERY", payload: e.target.value })
+              }
+              value={searchFormState.query}
               type="text"
               placeholder="Search country..."
             />
@@ -28,7 +33,7 @@ function Search() {
             </button>
           </form>
           <ul className={styles.countries}>
-            {countries.map((item, i) => (
+            {searchFormState.searchedCountries.map((item, i) => (
               <CountryItem
                 key={i}
                 image={item.flags.svg}
@@ -41,7 +46,7 @@ function Search() {
           </ul>
         </>
       )}
-      {showForm && <Outlet />}
+      {searchFormState.formIsVisible && <Outlet />}
     </div>
   );
 }
