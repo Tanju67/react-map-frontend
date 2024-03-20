@@ -4,11 +4,15 @@ import CountryItem from "./CountryItem";
 import { Outlet } from "react-router-dom";
 import { SearchFormContext } from "../../shared/context/searchForm-context";
 import { SearchFormRequestContetx } from "../../shared/context/searchFormRequest-context";
+import Modal from "../../shared/UIElements/Modal";
+import { BeatLoader } from "react-spinners";
 
 function Search() {
   const { dispatch, showFormHandler, searchFormState } =
     useContext(SearchFormContext);
-  const { getCountryDataFromApi } = useContext(SearchFormRequestContetx);
+  const { getCountryDataFromApi, isLoading, error, setError } = useContext(
+    SearchFormRequestContetx
+  );
   const submitHandler = async (e) => {
     e.preventDefault();
     getCountryDataFromApi();
@@ -20,6 +24,10 @@ function Search() {
       {!searchFormState.formIsVisible && (
         <>
           <form onSubmit={submitHandler} className={styles.formControl}>
+            {error && !isLoading && (
+              <Modal errorMsg={error} handleError={() => setError(null)} />
+            )}
+            {isLoading && <BeatLoader className="loader" color="#36d7b7" />}
             <input
               onChange={(e) =>
                 dispatch({ type: "SET_QUERY", payload: e.target.value })

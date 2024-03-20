@@ -1,16 +1,56 @@
-/* ul {
-  background-color: brown;
-  width: 100%;
-  height: 50vh;
+.page {
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  position: relative;
+}
+.detailCard {
+  padding: 1.5rem;
+  background-color: var(--clr-secondary);
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  overflow-y: scroll;
+}
+.header {
   display: flex;
   gap: 1rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-li {
-  width: 50px;
-  height: 50px;
-  background-color: chartreuse;
-} */
+.imgBox img {
+  width: 15rem;
+}
+.infoBox h3 {
+  font-size: 2rem;
+}
+
+.infoBox p span:first-child {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.detail {
+  margin-top: 2rem;
+}
+.detail h4 {
+  font-size: 1.6rem;
+}
+
+.detail li {
+  margin-bottom: 0.5rem;
+}
+
+.detail a {
+  color: #fff;
+  transition: all 0.3s;
+}
+.detail a:hover {
+  text-decoration: underline;
+}
+
+.btnBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

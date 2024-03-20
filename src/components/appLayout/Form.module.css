@@ -3,6 +3,7 @@
   background-color: var(--clr-secondary);
   color: #fff;
   height: 60vh;
+  overflow-y: scroll;
 }
 
 .formCard h4 {
@@ -42,4 +43,19 @@
 
 .stepTwo {
   font-size: 1.2rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #555;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--clr-primary);
 }

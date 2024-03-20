@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: relative;
 }
 
 .formControl {
@@ -34,19 +35,4 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #555;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--clr-primary);
 }

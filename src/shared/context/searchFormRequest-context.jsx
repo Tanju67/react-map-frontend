@@ -5,9 +5,12 @@ import { SearchFormContext } from "./searchForm-context";
 
 const SearchFormRequestContetx = createContext({
   mapError: null,
+  isLoading: false,
+  error: null,
   getCountryDataFromApi: () => {},
   reverseGeolocation: () => {},
   setMapError: () => {},
+  setError: () => {},
 });
 
 const SearchFormRequestProvider = ({ children }) => {
@@ -37,6 +40,7 @@ const SearchFormRequestProvider = ({ children }) => {
 
   const reverseGeolocation = async (coords, fn) => {
     try {
+      setIsLoading(true);
       const res = await fetch(
         `https://api.geoapify.com/v1/geocode/reverse?lat=${coords[0]}&lon=${coords[1]}&apiKey=7512e9b0f5f5484086d3c24625a72875`
       );
@@ -60,8 +64,10 @@ const SearchFormRequestProvider = ({ children }) => {
       });
 
       fn();
+      setIsLoading(false);
     } catch (error) {
       setError(error.message);
+      setIsLoading(false);
     }
   };
 
@@ -72,6 +78,9 @@ const SearchFormRequestProvider = ({ children }) => {
         reverseGeolocation,
         mapError,
         setMapError,
+        isLoading,
+        error,
+        setError,
       }}
     >
       {children}

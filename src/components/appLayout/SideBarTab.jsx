@@ -1,12 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./SideBarTab.module.css";
 import { NavLink } from "react-router-dom";
 import { SearchFormContext } from "../../shared/context/searchForm-context";
+import { CountryDataContext } from "../../shared/context/countryData-context";
+import Modal from "../../shared/UIElements/Modal";
 
 function SideBarTab() {
   const { dispatch, searchFormState } = useContext(SearchFormContext);
+  const { selectedCountry } = useContext(CountryDataContext);
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.tabs}>
+      {showModal && (
+        <Modal
+          errorMsg={"Click a contry detail button!"}
+          handleError={() => setShowModal(false)}
+        />
+      )}
       <NavLink
         onClick={() => {
           dispatch({ type: "RESET_FORM" });
@@ -36,6 +46,10 @@ function SideBarTab() {
 
       <NavLink
         onClick={() => {
+          if (selectedCountry?.name === undefined) {
+            setShowModal(true);
+            return;
+          }
           dispatch({ type: "RESET_FORM" });
           dispatch({ type: "SET_TAB_INDEX", payload: 3 });
         }}
@@ -43,7 +57,7 @@ function SideBarTab() {
           +searchFormState.tabIndex === 3 ? styles.active : ""
         }`}
         activeclassname="active"
-        to={"detail"}
+        to={selectedCountry?.name === undefined ? "countries" : "detail"}
       >
         Travel Detail
       </NavLink>

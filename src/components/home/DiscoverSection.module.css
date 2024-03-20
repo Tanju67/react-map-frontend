@@ -21,6 +21,9 @@
 
 .imgBox img {
   width: 100%;
+  height: 35rem;
+  object-fit: cover;
+  object-position: left;
 }
 
 .textBox {

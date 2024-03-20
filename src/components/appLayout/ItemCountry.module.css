@@ -1,0 +1,86 @@
+.item {
+  width: 96%;
+  display: flex;
+  background-color: var(--clr-secondary);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  color: #fff;
+}
+
+.imgBox {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imgBox img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.imgBox a {
+  color: #fff;
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+.imgBox a:hover {
+  color: var(--clr-primary);
+}
+.dateBox {
+  display: flex;
+
+  gap: 3px;
+  font-size: 1rem;
+  color: #fff;
+}
+.dateBox span {
+  background-color: #333;
+  padding: 3px;
+  border: 3px solid var(--clr-secondary);
+}
+.btnBox {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  transition: all 0.3s;
+  color: #fff;
+}
+
+.btnBox span:first-child {
+  background-color: var(--clr-primary);
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.btnBox svg {
+  font-size: 1.3rem;
+}
+
+.popup {
+  position: absolute;
+  top: -2.2rem;
+  left: -1rem;
+  background-color: #000;
+  font-size: 1rem;
+  padding: 1px 4px;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.btnBox:hover .popup {
+  opacity: 1;
+}
+
+.btnBox:hover {
+  transform: scale(1.2);
+}

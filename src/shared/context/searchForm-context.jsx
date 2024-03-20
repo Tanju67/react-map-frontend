@@ -12,6 +12,7 @@ const SearchFormContext = createContext({
 
 const initialState = {
   query: "",
+  zoom: 6,
   tabIndex: 1,
   searchedCountries: [],
   formIsVisible: false,
@@ -140,6 +141,12 @@ const searchFormReducer = (state, action) => {
       return {
         ...state,
         tabIndex: +action.payload,
+      };
+
+    case "SET_ZOOM":
+      return {
+        ...state,
+        zoom: +action.payload,
       };
 
     case "RESET_QUERY":

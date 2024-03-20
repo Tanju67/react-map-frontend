@@ -3,12 +3,14 @@ import styles from "./Form.module.css";
 import Card from "../../shared/UIElements/Card";
 import Button from "../../shared/UIElements/Button";
 import { SearchFormContext } from "../../shared/context/searchForm-context";
+import { SearchFormRequestContetx } from "../../shared/context/searchFormRequest-context";
+import Modal from "../../shared/UIElements/Modal";
+import { BeatLoader } from "react-spinners";
 
 function Form() {
   const { searchFormState, dispatch, backBtnHandler, nextBtnHandler } =
     useContext(SearchFormContext);
-
-  console.log(searchFormState);
+  const { isLoading, error, setError } = useContext(SearchFormRequestContetx);
 
   let disabled;
   if (+searchFormState.formIndex === 1) {
@@ -76,6 +78,10 @@ function Form() {
               {searchFormState.selectedCountry.name} by clicking on map.
             </h4>
             <ul>
+              {error && !isLoading && (
+                <Modal errorMsg={error} handleError={() => setError(null)} />
+              )}
+              {isLoading && <BeatLoader className="loader" color="#36d7b7" />}
               {searchFormState.selectedCountry.destinationAddress.map(
                 (item, i) => (
                   <li key={i}>

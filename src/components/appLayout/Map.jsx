@@ -13,6 +13,7 @@ import { useGeolocation } from "../../shared/hooks/useGeolocation";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { SearchFormContext } from "../../shared/context/searchForm-context";
 import { SearchFormRequestContetx } from "../../shared/context/searchFormRequest-context";
+import { CountryDataContext } from "../../shared/context/countryData-context";
 
 function Map() {
   const [mapPosition, setMapPosition] = useState([40, 0]);
@@ -20,6 +21,7 @@ function Map() {
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
   const { searchFormState } = useContext(SearchFormContext);
+  const { countries, selectedCountry } = useContext(CountryDataContext);
 
   const {
     isLoading: isLoadingPosition,
@@ -48,7 +50,7 @@ function Map() {
       )}
       <MapContainer
         center={mapPosition}
-        zoom={6}
+        zoom={searchFormState.zoom}
         scrollWheelZoom={true}
         className={styles.map}
       >
@@ -59,10 +61,27 @@ function Map() {
         {searchFormState.selectedCountry.destinationPoints.map((item, i) => (
           <Marker key={i} position={[item.lat, item.lng]}>
             <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
+              {searchFormState.selectedCountry.destinationAddress[i].address}
             </Popup>
           </Marker>
         ))}
+
+        {searchFormState.tabIndex === 2 &&
+          countries.map((item, i) => (
+            <Marker
+              key={i}
+              position={[item.geoLocation[0], item.geoLocation[1]]}
+            >
+              <Popup>{countries[i].name}</Popup>
+            </Marker>
+          ))}
+
+        {searchFormState.tabIndex === 3 &&
+          selectedCountry?.destinationPoints?.map((item, i) => (
+            <Marker key={i} position={[item.lat, item.lng]}>
+              <Popup>{selectedCountry.destinationAddress[i].address}</Popup>
+            </Marker>
+          ))}
 
         <ChangeCenter position={mapPosition} />
         {searchFormState.formIndex === 2 && <DetectClick />}
@@ -72,8 +91,9 @@ function Map() {
 }
 
 function ChangeCenter({ position }) {
+  const { searchFormState } = useContext(SearchFormContext);
   const map = useMap();
-  map.setView(position);
+  map.flyTo(position, searchFormState.zoom);
   return null;
 }
 
