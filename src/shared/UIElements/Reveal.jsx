@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
+import styles from "./Reveal.module.css";
 
 function Reveal({ children, width = "fit-content" | "100%", className }) {
   const ref = useRef(null);

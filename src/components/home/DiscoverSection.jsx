@@ -18,7 +18,7 @@ function DiscoverSection() {
       <Reveal>
         <div className={styles.item}>
           <div className={styles.imgBox}>
-            <img src={img4} alt="img1" />
+            <img className={styles.appImg} src={img4} alt="img1" />
           </div>
           <div className={styles.textBox}>
             <h3>Plan your travel</h3>

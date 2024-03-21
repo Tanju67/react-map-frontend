@@ -59,3 +59,21 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media only screen and (max-width: 1000px) {
+  .registerCard {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .registerCard {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .registerCard {
+    width: 90%;
+  }
+}

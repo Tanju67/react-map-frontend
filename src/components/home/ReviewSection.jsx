@@ -29,57 +29,57 @@ function ReviewSection() {
         </h2>
       </Reveal>
 
-      <FaCaretSquareLeft className={styles.left} onClick={prevSlide} />
-      <FaCaretSquareRight className={styles.right} onClick={nextSlide} />
-      <Reveal>
+      <Reveal className={styles.mainBox}>
+        <FaCaretSquareLeft className={styles.left} onClick={prevSlide} />
+        <FaCaretSquareRight className={styles.right} onClick={nextSlide} />
         <div
           className={`${styles.slider}`}
           style={{ transform: `translate(-${slideIndex * 33.33}%)` }}
         >
           <div className={`${styles.slide} ${styles.slide0}`}>
             <Card className={styles.container}>
-              <div className={styles.view}></div>
               <div className={styles.imgBox}>
                 <img src={personImg1} alt="imgPerson" />
               </div>
               <div className={styles.contentBox}>
                 <h3>Andrea Piacquadio</h3>
                 <blockquote>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  sapiente consequatur nisi eligendi quaerat perspiciatis fugiat
-                  laborum animi rerum maiores!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Assumenda dolore tempora omnis odit eos dolor corrupti
+                  repellat labore eveniet mollitia iusto quis corporis nisi, nam
+                  maiores explicabo architecto cupiditate possimus.
                 </blockquote>
               </div>
             </Card>
           </div>
           <div className={`${styles.slide} ${styles.slide1}`}>
             <Card className={styles.container}>
-              <div className={styles.view}></div>
               <div className={styles.imgBox}>
                 <img src={personImg2} alt="imgPerson" />
               </div>
               <div className={styles.contentBox}>
                 <h3>Hannah Nelson</h3>
                 <blockquote>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  sapiente consequatur nisi eligendi quaerat perspiciatis fugiat
-                  laborum animi rerum maiores!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Assumenda dolore tempora omnis odit eos dolor corrupti
+                  repellat labore eveniet mollitia iusto quis corporis nisi, nam
+                  maiores explicabo architecto cupiditate possimus.
                 </blockquote>
               </div>
             </Card>
           </div>
           <div className={`${styles.slide} ${styles.slide2}`}>
             <Card className={styles.container}>
-              <div className={styles.view}></div>
               <div className={styles.imgBox}>
                 <img src={personImg3} alt="imgPerson" />
               </div>
               <div className={styles.contentBox}>
                 <h3>Spencer Selover</h3>
                 <blockquote>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  sapiente consequatur nisi eligendi quaerat perspiciatis fugiat
-                  laborum animi rerum maiores!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Assumenda dolore tempora omnis odit eos dolor corrupti
+                  repellat labore eveniet mollitia iusto quis corporis nisi, nam
+                  maiores explicabo architecto cupiditate possimus.
                 </blockquote>
               </div>
             </Card>

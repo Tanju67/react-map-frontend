@@ -58,3 +58,21 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media only screen and (max-width: 1000px) {
+  .loginCard {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .loginCard {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .loginCard {
+    width: 90%;
+  }
+}

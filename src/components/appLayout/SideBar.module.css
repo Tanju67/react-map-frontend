@@ -5,9 +5,35 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 .logoBox {
   margin: 3rem 0;
   flex: 1;
+}
+
+.clsBtn {
+  color: #fff;
+  font-size: 3rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background-color: var(--clr-primary);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .sideBar {
+    flex: 3;
+  }
+  .clsBtn {
+    display: flex;
+  }
 }

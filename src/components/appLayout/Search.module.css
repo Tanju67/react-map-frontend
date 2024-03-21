@@ -9,10 +9,11 @@
 .formControl {
   display: flex;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .formControl input {
-  flex: 1;
+  flex: 3;
   border: none;
   padding: 0.5rem;
   outline: none;
@@ -27,6 +28,7 @@
   background-color: var(--clr-primary);
   border: none;
   padding: 0 1rem;
+  flex: 1;
 }
 
 .countries {
@@ -35,4 +37,14 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .countries {
+    overflow-y: scroll;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

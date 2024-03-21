@@ -3,4 +3,30 @@
   height: 100vh;
   display: flex;
   /* overflow: hidden; */
+  position: relative;
+}
+
+.showBtn {
+  position: absolute;
+  top: 3rem;
+  z-index: 1000;
+  left: 7rem;
+  background-color: var(--clr-secondary);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showBtn svg {
+  font-size: 3rem;
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .layout {
+    /* flex-direction: column; */
+  }
 }

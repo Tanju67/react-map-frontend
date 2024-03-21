@@ -15,7 +15,7 @@ function PricingSection() {
       </Reveal>
       <Reveal>
         <div className={styles.pricingContainer}>
-          <Card className={styles.pricingCard}>
+          <Reveal className={styles.pricingCard}>
             <div className={styles.text}>
               <h3 className={styles.title}>Premium</h3>
               <p className={styles.description}>
@@ -31,8 +31,8 @@ function PricingSection() {
               </div>
             </div>
             <Button size={"normal"}>Buy Now</Button>
-          </Card>
-          <Card className={styles.pricingCard}>
+          </Reveal>
+          <Reveal className={styles.pricingCard}>
             <div className={styles.text}>
               <h3 className={styles.title}>Standart</h3>
               <p className={styles.description}>
@@ -48,8 +48,8 @@ function PricingSection() {
               </div>
             </div>
             <Button size={"normal"}>Buy Now</Button>
-          </Card>
-          <Card className={styles.pricingCard}>
+          </Reveal>
+          <Reveal className={styles.pricingCard}>
             <div className={styles.text}>
               <div>
                 <h3 className={styles.title}>Free</h3>
@@ -65,7 +65,7 @@ function PricingSection() {
               </div>
             </div>
             <Button size={"normal"}>Sign Up Free</Button>
-          </Card>
+          </Reveal>
         </div>
       </Reveal>
     </div>
