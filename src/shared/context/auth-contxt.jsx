@@ -31,11 +31,14 @@ export const AuthProvider = ({ children }) => {
   const sendAuthRequest = useCallback(async (endPoint, body, headers, fn) => {
     try {
       setIsLoading(true);
-      const res = await fetch(`http://localhost:5000/api/v1/${endPoint}`, {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: headers,
-      });
+      const res = await fetch(
+        import.meta.env.VITE_BACKEND_URL + `/api/v1/${endPoint}`,
+        {
+          method: "POST",
+          body: JSON.stringify(body),
+          headers: headers,
+        }
+      );
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.msg);
@@ -53,11 +56,14 @@ export const AuthProvider = ({ children }) => {
   const getCurentUser = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/v1/auth/currentUser", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        import.meta.env.VITE_BACKEND_URL + "/api/v1/auth/currentUser",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       setUser(data);
     } catch (error) {

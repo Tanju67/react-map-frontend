@@ -24,7 +24,7 @@ export const CountryDataProvider = ({ children }) => {
     try {
       setIsLoading(true);
       const res = await fetch(
-        `http://localhost:5000/api/v1/country${endPoint}`,
+        import.meta.env.VITE_BACKEND_URL + `/api/v1/country${endPoint}`,
         {
           method: "POST",
           body: JSON.stringify(body),
@@ -48,13 +48,16 @@ export const CountryDataProvider = ({ children }) => {
     const token = localStorage.getItem("token");
     try {
       setIsLoading(true);
-      const res = await fetch(`http://localhost:5000/api/v1/country`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        import.meta.env.VITE_BACKEND_URL + `/api/v1/country`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.msg);
@@ -73,7 +76,7 @@ export const CountryDataProvider = ({ children }) => {
     try {
       setIsLoading(true);
       const res = await fetch(
-        `http://localhost:5000/api/v1/country/${endPoint}`,
+        import.meta.env.VITE_BACKEND_URL + `/api/v1/country/${endPoint}`,
         {
           method: "GET",
           headers: {
@@ -100,7 +103,7 @@ export const CountryDataProvider = ({ children }) => {
     try {
       setIsLoading(true);
       const res = await fetch(
-        `http://localhost:5000/api/v1/country/${endpoint}`,
+        import.meta.env.VITE_BACKEND_URL + `/api/v1/country/${endpoint}`,
         {
           method: "DELETE",
           headers: {
