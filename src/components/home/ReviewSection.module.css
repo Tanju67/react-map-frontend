@@ -131,8 +131,31 @@
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .section {
+    height: 120vh;
+  }
+  .mainBox {
+    position: relative;
+    top: 10rem;
+  }
+}
+
 @media only screen and (max-width: 400px) {
+  .section {
+    height: 140vh;
+  }
   .section h2 {
     margin: 5rem 8rem 10rem 8rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .section {
+    height: 160vh;
+  }
+  .mainBox {
+    position: relative;
+    top: 15rem;
   }
 }

@@ -89,7 +89,7 @@ function TravelDetail() {
             <Button size={"sm"}>Back</Button>
           </Link>
           <Button onClick={deleteCountryHandler} size={"sm"}>
-            Delete Travel Plan
+            Delete Plan
           </Button>
         </div>
       </Card>

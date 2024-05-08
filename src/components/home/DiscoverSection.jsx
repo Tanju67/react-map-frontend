@@ -3,7 +3,7 @@ import styles from "./DiscoverSection.module.css";
 import img1 from "../../assets/pexels-leah-newhouse-185933.jpg";
 import img2 from "../../assets/pexels-mihis-alex-21014.jpg";
 import img3 from "../../assets/pexels-porapak-apichodilok-346885.jpg";
-import img4 from "../../assets/scrnli_3_20_2024_11-09-55 PM.png";
+import img4 from "../../assets/scrnli_3_20_2024_11-09-55 PM.jpg";
 import Logo from "../../shared/UIElements/Logo";
 import Reveal from "../../shared/UIElements/Reveal";
 

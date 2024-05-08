@@ -104,7 +104,7 @@ function Form() {
             className={`${styles.nextBtn}`}
             size={"sm"}
           >
-            {searchFormState.formIndex === 2 ? "Add Travel Plan" : "Next"}
+            {searchFormState.formIndex === 2 ? "Add Plan" : "Next"}
           </Button>
         </div>
       </form>

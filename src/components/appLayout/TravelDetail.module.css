@@ -7,7 +7,7 @@
 .detailCard {
   padding: 1.5rem;
   background-color: var(--clr-secondary);
-  height: 65vh;
+  height: calc(100vh - 20rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,4 +53,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (max-width: 1300px) {
+  .header {
+    flex-direction: column;
+  }
+  .btnBox {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .infoBox p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
 }

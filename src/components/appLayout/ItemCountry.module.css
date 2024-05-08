@@ -84,3 +84,15 @@
 .btnBox:hover {
   transform: scale(1.2);
 }
+
+@media only screen and (max-width: 600px) {
+  .imgBox {
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+  }
+  .dateBox {
+    flex-direction: column;
+    gap: 0;
+  }
+}
