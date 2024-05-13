@@ -72,7 +72,9 @@ const SearchProvider = ({ children }) => {
   const reverseGeolocation = async (coords, fn) => {
     try {
       const res = await fetch(
-        `https://api.geoapify.com/v1/geocode/reverse?lat=${coords[0]}&lon=${coords[1]}&apiKey=7512e9b0f5f5484086d3c24625a72875`
+        `https://api.geoapify.com/v1/geocode/reverse?lat=${coords[0]}&lon=${
+          coords[1]
+        }&apiKey=${import.meta.env.VITE_GEOCODING_API_KEY}`
       );
       if (!res.ok) {
         throw new Error("Something went wrong");
