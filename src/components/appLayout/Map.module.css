@@ -54,3 +54,15 @@
 .mapBtn:hover {
   background-color: var(--clr-secondary-tint);
 }
+
+@media only screen and (max-width: 1200px) {
+  .mapContainer {
+    flex: 3;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .mapContainer {
+    flex: 2;
+  }
+}

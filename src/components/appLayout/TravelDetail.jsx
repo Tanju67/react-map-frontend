@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./TravelDetail.module.css";
-import { motion } from "framer-motion";
 import { CountryDataContext } from "../../shared/context/countryData-context";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Card from "../../shared/UIElements/Card";
@@ -26,7 +25,7 @@ function TravelDetail() {
   const countryId = searchParams.get("id");
 
   const deleteCountryHandler = () => {
-    deleteCountry(countryId, (data) => {});
+    deleteCountry(countryId, () => {});
     getAllCountries((data) => {
       setCountries(data.countries);
     });

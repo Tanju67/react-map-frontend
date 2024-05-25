@@ -1,6 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { CountryDataContext } from "./countryData-context";
 import { SearchFormContext } from "./searchForm-context";
 
 const SearchFormRequestContetx = createContext({
@@ -30,7 +28,6 @@ const SearchFormRequestProvider = ({ children }) => {
       }
       const data = await res.json();
       dispatch({ type: "SET_SEARCH_RESULT", payload: data });
-      console.log(data);
     } catch (error) {
       setError(error.message);
     } finally {

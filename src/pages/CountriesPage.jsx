@@ -1,8 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Countries from "../components/appLayout/Countries";
 import { CountryDataContext } from "../shared/context/countryData-context";
-import Modal from "../shared/UIElements/Modal";
-import { BeatLoader } from "react-spinners";
 import { SearchFormContext } from "../shared/context/searchForm-context";
 
 function CountriesPage() {

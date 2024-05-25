@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import styles from "./HeaderSection.module.css";
 import MainNavigation from "../../shared/UIElements/mainNavigation/MainNavigation";
 import Button from "../../shared/UIElements/Button";
-import { motion } from "framer-motion";
 import { AuthContext } from "../../shared/context/auth-contxt";
-import { useNavigate } from "react-router-dom";
 
 function HeaderSection() {
   const { isLoggedIn } = useContext(AuthContext);

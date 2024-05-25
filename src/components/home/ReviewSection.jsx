@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./ReviewSection.module.css";
 import Card from "../../shared/UIElements/Card";
 import personImg1 from "../../assets/pexels-andrea-piacquadio-733872.jpg";

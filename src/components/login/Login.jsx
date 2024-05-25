@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./Login.module.css";
 import MainNavigation from "../../shared/UIElements/mainNavigation/MainNavigation";
 import Card from "../../shared/UIElements/Card";

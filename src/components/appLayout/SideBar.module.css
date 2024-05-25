@@ -29,6 +29,12 @@
   display: none;
 }
 
+@media only screen and (max-width: 1200px) {
+  .sideBar {
+    flex: 2;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .sideBar {
     flex: 3;

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./CountryItem.module.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";

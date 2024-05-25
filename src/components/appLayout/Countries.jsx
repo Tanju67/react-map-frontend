@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./Countries.module.css";
 import { CountryDataContext } from "../../shared/context/countryData-context";
 import ItemCountry from "./ItemCountry";

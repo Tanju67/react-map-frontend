@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./FooterSection.module.css";
 import Logo from "../../shared/UIElements/Logo";
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,6 @@ import Reveal from "../../shared/UIElements/Reveal";
 import { AuthContext } from "../../shared/context/auth-contxt";
 
 function FooterSection() {
-  const [active, setActive] = useState(1);
   const { isLoggedIn, onLogout } = useContext(AuthContext);
   return (
     <Reveal>

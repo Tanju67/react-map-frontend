@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./DiscoverSection.module.css";
 import img1 from "../../assets/pexels-leah-newhouse-185933.jpg";
 import img2 from "../../assets/pexels-mihis-alex-21014.jpg";

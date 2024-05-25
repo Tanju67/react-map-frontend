@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./ItemCountry.module.css";
 import { BiSolidDetail } from "react-icons/bi";
-import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { SearchFormContext } from "../../shared/context/searchForm-context";
-import { CountryDataContext } from "../../shared/context/countryData-context";
 
 function ItemCountry({ flag, name, firstDay, lastDay, coord, id }) {
   const { dispatch } = useContext(SearchFormContext);
-  const { setSelectedCountry, countries } = useContext(CountryDataContext);
+
   return (
     <li className={styles.item}>
       <div className={styles.imgBox}>

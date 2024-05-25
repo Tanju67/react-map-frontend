@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./AppLayout.module.css";
 import SideBar from "./SideBar";
 import Map from "./Map";

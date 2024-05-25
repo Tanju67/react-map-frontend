@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./SideBarTab.module.css";
 import { NavLink } from "react-router-dom";
 import { SearchFormContext } from "../../shared/context/searchForm-context";

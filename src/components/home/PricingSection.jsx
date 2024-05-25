@@ -1,7 +1,5 @@
-import React from "react";
 import styles from "./PricingSection.module.css";
 import Logo from "../../shared/UIElements/Logo";
-import Card from "../../shared/UIElements/Card";
 import Button from "../../shared/UIElements/Button";
 import Reveal from "../../shared/UIElements/Reveal";
 

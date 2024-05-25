@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./Search.module.css";
 import CountryItem from "./CountryItem";
 import { Outlet } from "react-router-dom";

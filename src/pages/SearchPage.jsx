@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Search from "../components/appLayout/Search";
 import { SearchFormContext } from "../shared/context/searchForm-context";
 

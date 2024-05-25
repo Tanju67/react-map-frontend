@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import TravelDetail from "../components/appLayout/TravelDetail";
 import { SearchFormContext } from "../shared/context/searchForm-context";
 import { useSearchParams } from "react-router-dom";

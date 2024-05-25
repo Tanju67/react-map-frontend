@@ -1,4 +1,3 @@
-import React from "react";
 import AppLayout from "../components/appLayout/AppLayout";
 import { CountryDataProvider } from "../shared/context/countryData-context";
 import { SearchFormProvider } from "../shared/context/searchForm-context";

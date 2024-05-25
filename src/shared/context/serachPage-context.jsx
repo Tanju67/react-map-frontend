@@ -162,7 +162,7 @@ const SearchProvider = ({ children }) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        (data) => {
+        () => {
           navigate("/app/countries");
         }
       );

@@ -43,12 +43,10 @@ export const AuthProvider = ({ children }) => {
       if (!res.ok) {
         throw new Error(data.msg);
       }
-      console.log(data);
       fn(data);
       setIsLoading(false);
     } catch (error) {
       setError(error.message);
-      console.log(error.message);
       setIsLoading(false);
     }
   }, []);

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./SideBar.module.css";
 import Logo from "../../shared/UIElements/Logo";
 import SideBarTab from "./SideBarTab";
