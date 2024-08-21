@@ -60,7 +60,7 @@ function Login() {
             onInput={inputHandler}
             validators={[VALIDATOR_EMAIL()]}
             value={formState.email.value}
-            valid={formState.email.valid}
+            valid={formState.email.isValid}
           />
           <Input
             id="password"
@@ -72,7 +72,7 @@ function Login() {
             onInput={inputHandler}
             validators={[VALIDATOR_MINLENGTH(6)]}
             value={formState.password.value}
-            valid={formState.password.valid}
+            valid={formState.password.isValid}
           />
           <button
             className={styles.loginBtn}
