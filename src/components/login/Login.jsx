@@ -15,9 +15,9 @@ import { BeatLoader } from "react-spinners";
 
 function Login() {
   const [inputHandler, formState] = useForm({
-    email: { value: "", isValid: false },
-    password: { value: "", isValid: false },
-    isValid: false,
+    email: { value: "test@mail.com", isValid: true },
+    password: { value: "secret123", isValid: true },
+    isValid: true,
   });
 
   const navigate = useNavigate();
@@ -59,6 +59,8 @@ function Login() {
             errorMsg="Please enter a valid email!"
             onInput={inputHandler}
             validators={[VALIDATOR_EMAIL()]}
+            value={formState.email.value}
+            valid={formState.email.valid}
           />
           <Input
             id="password"
@@ -69,6 +71,8 @@ function Login() {
             errorMsg="Please enter a valid password!"
             onInput={inputHandler}
             validators={[VALIDATOR_MINLENGTH(6)]}
+            value={formState.password.value}
+            valid={formState.password.valid}
           />
           <button
             className={styles.loginBtn}
